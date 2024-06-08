@@ -1,0 +1,132 @@
+/*-- This CSS file will be included in all pages --*/
+
+a, li, button {
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+h1 {
+    font-family: "Ubuntu Sans", sans-serif;
+    color: #003838;
+}
+
+h3 {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #003838;
+}
+
+p {
+    font-family: "Rosarivo";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+:root {
+    --font-family-one: "Ubuntu Sans", sans-serif;
+    --font-family-two: "Caveat", cursive;
+    --font-family-three: "Rosarivo";
+    --font-family-four: "Hanken Grotesk", sans-serif;
+    --font-family-five: "Poppins", sans-serif;
+
+    --font-size-headline: 50px;
+    --font-size-sub-headline: 18px;
+    --font-size-paragraph: 18px;
+    --font-size-links: 15px;
+
+    --font-weight-headline: 600;
+    --font-weight-sub-headline: 500;
+    --font-weight-paragraph: 400;
+    --font-weight-links: 500;
+
+    --font-color-headline: #003838;
+    --font-color-sub-headline: #000;
+    --font-color-paragraph: #2e2e2e;
+    --font-color-links: #0000ff;
+    --font-color-white: #f1f1f1;
+    --font-color-dark: #3b3b3b;
+    --font-color-theme: #dd4600;
+    
+    --shadow-dark-1: #0000001a;
+    --shadow-dark-2: #00000031;
+}
+
+/* Buttons */
+
+.btn {
+    font-family: var(--font-family-five);
+    font-weight: var(--font-weight-links);
+    font-size: var(--font-size-links);
+    border-radius: 20px;
+    padding: 5px 25px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.btn.btn-primary {
+    background: none;
+    background-image: linear-gradient(320deg, rgb(221, 70, 0) 0%, rgb(232, 110, 4) 100%);
+    color: var(--font-color-white);
+    border-color: var(--font-color-theme);
+}
+
+.btn-primary:hover {
+    background-image: none;
+    background: none;
+    color: var(--font-color-dark);
+    box-shadow: 0px 0px 10px 2px var(--shadow-dark-1);
+}
+
+.btn.btn-secondary {
+    background: #fff;
+    color: var(--font-color-theme);
+    border-color: var(--font-color-theme);
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: var(--font-color-theme);
+    border-color: var(--font-color-theme);
+    box-shadow: 0px 0px 10px 2px var(--shadow-dark-1);
+}
+
+/* Alert */
+.alert-wrap{
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 540px){
+    .alert-wrap {
+        width: 90%;
+        top: 10%;
+    }
+}
+
+.alert {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 42px;
+    padding: 7px 20px;
+    box-shadow: 0px 0px 10px 2px var(--shadow-dark-2);
+}
+
+.alert.alert-primary {
+    background-color: rgb(49, 49, 49);
+    color: var(--font-color-white);
+    border: 2px solid #fff;
+}
+
+.alert svg{
+    width: 20px;
+    height: 20px;
+}
