@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'AGA Holidays') }}</title>
+        <!-- <title>{{ config('app.name', 'AGA Holidays') }}</title> -->
+        <title>{{ $title ?? config('app.name', 'AGA Holidays') }}</title>
 
         <!-- Fonts -->
         <!-- <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,12 +19,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
+        
+        <!-- Includes -->
+        <link rel="stylesheet" href="{{ asset('assets/owl-carousel/owl.carousel.min.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('assets/owl-carousel/owl.theme.default.min.css') }}" type="text/css" />
 
+        
         <!-- CSS -->
-        @vite(['resources/css/defaults.css'])
+        @vite(['resources/sass/app.scss'])
+        
+        @vite(['resources/css/defaults.css', 'resources/css/navigation.css'])
 
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -31,12 +39,11 @@
 
         <main>
             {{ $slot }}
+
         </main>
 
         <!-- Scripts -->
         @vite(['resources/js/app.js'])
-
-        <!-- Bootstrap JS -->
-        <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/owl-carousel/owl.carousel.min.js') }}"></script>
     </body>
 </html>
