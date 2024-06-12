@@ -60,12 +60,22 @@
 }
 
 @media(max-width: 576px) {
+    .lead .overlay {
+        padding: 0 15px;
+    }
+
+    .lead .overlay .col.col-left h3 {
+        text-align: center;
+    }
+    
     .lead .overlay .col.col-left h1 {
         font-size: 30px;
+        text-align: center;
     }
 
     .lead .overlay .col.col-left p {
         width: unset;
+        text-align: center;
     }
 }
 

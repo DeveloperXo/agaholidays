@@ -28,7 +28,7 @@
         <!-- CSS -->
         @vite(['resources/sass/app.scss'])
         
-        @vite(['resources/css/defaults.css', 'resources/css/navigation.css'])
+        @vite(['resources/css/defaults.css', 'resources/css/navigation.css', 'resources/css/footer.css'])
 
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -39,8 +39,9 @@
 
         <main>
             {{ $slot }}
-
         </main>
+
+        @include('layouts.footer')
 
         <!-- Scripts -->
         @vite(['resources/js/app.js'])

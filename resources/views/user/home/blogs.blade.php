@@ -10,7 +10,7 @@
         </div>
 
         <div class="row mt-3">
-            <div class="col-12 col-lg-6 col-xl-4 col-md-6 mt-3">
+            <div class="col-6 col-lg-6 col-xl-4 col-md-6 mt-3">
                 <a href="#">
                     <div class="card" style="width: 100%;">
                         <div class="img-wrap">
@@ -42,7 +42,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 col-md-6 mt-3">
+            <div class="col-6 col-lg-6 col-xl-4 col-md-6 mt-3">
                 <a href="#">
                     <div class="card" style="width: 100%;">
                         <div class="img-wrap">
@@ -74,7 +74,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 col-md-6 mt-3">
+            <div class="col-6 col-lg-6 col-xl-4 col-md-6 mt-3">
                 <a href="#">
                     <div class="card" style="width: 100%;">
                         <div class="img-wrap">
@@ -106,7 +106,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 col-md-6 mt-3">
+            <div class="col-6 col-lg-6 col-xl-4 col-md-6 mt-3">
                 <a href="#">
                     <div class="card" style="width: 100%;">
                         <div class="img-wrap">
@@ -138,7 +138,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 col-md-6 mt-3">
+            <div class="col-6 col-lg-6 col-xl-4 col-md-6 mt-3">
                 <a href="#">
                     <div class="card" style="width: 100%;">
                         <div class="img-wrap">
@@ -170,7 +170,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 col-md-6 mt-3">
+            <div class="col-6 col-lg-6 col-xl-4 col-md-6 mt-3">
                 <a href="#">
                     <div class="card" style="width: 100%;">
                         <div class="img-wrap">

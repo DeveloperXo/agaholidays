@@ -192,13 +192,14 @@ p {
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
-    border: 3px solid rgb(73, 73, 73);
+    border: 3px solid #dd460098;
+    background-color: #fff;
 }
 
 
 .newsletter .newsletter-container .img i {
-    font-size: 200px;
-    color: rgb(73, 73, 73);
+    font-size: 180px;
+    color: #dd4600e1;
 }
 
 .newsletter .newsletter-container .form-wrap {
@@ -246,4 +247,7 @@ p {
     .newsletter .newsletter-container .img i {
         font-size: 150px;
     }
+}
+body {
+    background-color: rgb(243, 243, 243);
 }
