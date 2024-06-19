@@ -165,7 +165,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="#" class="btn btn-primary">Get Started</a>
+            <a href="{{ route('user_packages') }}" class="btn btn-primary">Get Started</a>
         </div>
     </div>
 </section>

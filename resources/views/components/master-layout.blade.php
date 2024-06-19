@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- <title>{{ config('app.name', 'AGA Holidays') }}</title> -->
-        <title>{{ $title ?? config('app.name', 'AGA Holidays') }}</title>
+        <title>{{ $meta['title'] ?? config('app.name', 'AGA Holidays') }} - {{ config('app.name', 'AGA Holidays') }}</title>
 
         <!-- Fonts -->
         <!-- <link rel="preconnect" href="https://fonts.bunny.net">

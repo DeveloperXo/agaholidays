@@ -11,6 +11,7 @@
 
 .navbar :where(a) {
     font-size: 17px;
+    font-family: var(--font-family-four);
 }
 
 .navbar .navbar-nav li a:hover {

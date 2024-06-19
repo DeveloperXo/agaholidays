@@ -1,4 +1,4 @@
-<x-master-layout :title="$title">
+<x-master-layout :meta="$meta">
     @vite(['resources/css/home.css'])
     
     <!-- Lead Section -->

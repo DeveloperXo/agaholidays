@@ -46,11 +46,17 @@ p {
     --font-color-paragraph: #2e2e2e;
     --font-color-links: #0000ff;
     --font-color-white: #f1f1f1;
-    --font-color-dark: #2e2e2e;
+    --font-color-dark: #383838;
     --font-color-theme: #dd4600;
     
     --shadow-dark-1: #0000001a;
     --shadow-dark-2: #00000031;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 93%;
+    }
 }
 
 /* Buttons */
@@ -64,6 +70,19 @@ p {
     border-width: 1px;
     border-style: solid;
     text-wrap: nowrap;
+}
+
+.btn.btn-sm {
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    border-width: 0px;
+}
+
+.btn.btn-primary:active {
+    background-color: rgb(221, 70, 0);
+    background-image: linear-gradient(320deg, rgb(221, 70, 0) 0%, rgb(232, 110, 4) 100%);
+    border-color: var(--font-color-theme);
 }
 
 .btn.btn-primary {
@@ -179,6 +198,30 @@ p {
 }
 
 
+/* Accordion */
+
+input.form-control:focus,
+select.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #dd46008e;
+    box-shadow: 0px 0px 0px 3px #dd46004f;
+}
+
+input.form-control, 
+select.form-control {
+    font-family: var(--font-family-five);
+    border-radius: 20px;
+}
+
+.accordion .accordion-item .accordion-header .accordion-button {
+    box-shadow: none;
+    border-bottom: 1px solid #0303031c;
+    background-color: var(--bs-accordian-bg);
+    font-family: var(--font-family-five);
+    font-size: 17px;
+    color: #00185c;
+}
+
 /* Newsletetr */
 
 .newsletter .newsletter-container {
@@ -188,12 +231,20 @@ p {
     border-radius: 20px;
 }
 
+.newsletter .container {
+    min-height: 350px;
+}
+
 .newsletter .newsletter-container .img {
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
     border: 3px solid #dd460098;
     background-color: #fff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -248,6 +299,64 @@ p {
         font-size: 150px;
     }
 }
-body {
-    background-color: rgb(243, 243, 243);
+
+
+/* Page Banner Component */
+
+.banner {
+    padding: 30px 0;
+}
+
+.banner .container {
+    border-radius: 15px;
+    padding: 60px 0;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner .container .banner-content .banner-title {
+    color: var(--font-color-white);
+    font-family: var(--font-family-four);
+    font-size: 50px;
+}
+
+.banner .container .banner-content .banner-text {
+    color: var(--font-color-white);
+    font-family: var(--font-family-two);
+    font-size: 27px;
+    line-height: 1;
+}
+
+@media (max-width: 576px) {
+    .banner {
+        padding: 0;
+    }
+    .banner .container {
+        margin: 0 auto;
+        width: 100%;
+        border-radius: 0px;
+        padding: 35px 18px;
+    }
+
+    .banner .container .banner-content .banner-title {
+        font-size: 37px;
+    }
+
+    .banner .container .banner-content .banner-text {
+        font-size: 22px;
+    }
+}
+
+/* Blog text */
+
+.blog-text :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-family-four);
+    margin: 15px 0;
+}
+
+.blog-text :where(p, li) {
+    font-family: var(--font-family-four);
+    color: var(--font-color-paragraph);
+    font-size: 16px;
 }
