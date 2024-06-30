@@ -1,0 +1,27 @@
+@media(min-width: 768px) {
+    .blog-single-body .blog-text .blog-img-wrap {
+        height: 450px;
+    }
+}
+
+.blog-single-body .blog-text .blog-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.blog-single-body .post-meta {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+
+.blog-single-body .post-meta .meta-child span {
+    font-family: var(--font-family-five);
+}
+
+.blogs-sidebar  {
+    padding-top: 20px;
+}
