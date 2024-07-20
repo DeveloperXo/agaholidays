@@ -4,78 +4,28 @@
             <div class="col col-12">
                 <div class="title text-center">
                     <h2 class="title-h">Destinations</h2>
-                    <p class="title-p">Repudiandae id, numquam necessitatibus laudantium beatae.</p>
+                    <p class="title-p">Discover captivating places for memorable travel experiences.</p>
                 </div>
             </div>
         </div>
 
         <div class="row mt-4">
             <div class="owl-carousel">
-                <div class="item">
-                    <a href="{{ route('user_destinations_single', 1) }}">
-                        <div class="card" style="width: 100%;">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/img/banner-3.jpg') }}" class="card-img-top" alt="...">
+                @foreach($destinations as $d)
+                    <div class="item">
+                        <a href="{{ route('user_destinations_single', $d->id) }}">
+                            <div class="card" style="width: 100%;">
+                                <div class="img-wrap">
+                                    <img src="{{ asset('storage/' . (json_decode($d->images)[0]->url ?? '')) }}" class="card-img-top" alt="{{ json_decode($d->images)[0]->caption ?? '' }}">
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $d->title }}</h5>
+                                </div>
                             </div>
-                            <div class="overlay"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Los Angeles</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="{{ route('user_destinations_single', 1) }}">
-                        <div class="card" style="width: 100%;">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/img/banner-3.jpg') }}" class="card-img-top" alt="...">
-                            </div>
-                            <div class="overlay"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Los Angeles</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="{{ route('user_destinations_single', 1) }}">
-                        <div class="card" style="width: 100%;">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/img/banner-3.jpg') }}" class="card-img-top" alt="...">
-                            </div>
-                            <div class="overlay"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Los Angeles</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="{{ route('user_destinations_single', 1) }}">
-                        <div class="card" style="width: 100%;">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/img/banner-3.jpg') }}" class="card-img-top" alt="...">
-                            </div>
-                            <div class="overlay"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Los Angeles</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="{{ route('user_destinations_single', 1) }}">
-                        <div class="card" style="width: 100%;">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/img/banner-3.jpg') }}" class="card-img-top" alt="...">
-                            </div>
-                            <div class="overlay"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Los Angeles</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

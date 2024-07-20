@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title> @isset($meta->page_title) {{ $meta->page_title . ' -' }} @endisset {{ config('app.name', 'AGA Holidays') }}</title>
+        <title>@if(isset($meta->page_title) && request()->route()->getName() !== 'user_home'){{ $meta->page_title . ' - ' .config('app.name', 'AGA Holidays') }}@elseif(isset($meta->page_title)){{ $meta->page_title }}@else{{ config('app.name', 'AGA Holidays') }}@endif</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,8 +28,11 @@
         @vite(['resources/css/auth.css'])
 
         <!-- JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="{{ asset('assets/admin/vendor/jquery/jquery-3.7.1.min.js') }}"></script>
+
+        {{--<!-- Spotlight Image Gallery -->--}}
+        <link rel="stylesheet" href="{{ asset('assets/spotlight/css/spotlight.min.css') }}" type="text/css" />
+        <script src="{{ asset('assets/spotlight/js/spotlight.min.js') }}"></script>
         
         <!-- Google Maps -->
         <script>
@@ -53,7 +56,8 @@
         @include('layouts.footer')
 
         <!-- Scripts -->
-        @vite(['resources/js/app.js'])
+        @vite(['resources/js/app.js', 'resources/js/user.js'])
+
         <script src="{{ asset('assets/owl-carousel/owl.carousel.min.js') }}"></script>
 
     </body>

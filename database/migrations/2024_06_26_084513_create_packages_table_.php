@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('page_meta_id');
             $table->string('status')->default('draft');
             $table->string('package_name');
-            $table->string('package_location');
-            $table->string('actual_price')->nullable();
-            $table->string('payable_price');
+            $table->string('city');
+            $table->string('country');
+            $table->decimal('starting_price', 10, 2); // Changed to decimal
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->string('duration');
             $table->json('tags');
             $table->json('infos');
             $table->json('images');

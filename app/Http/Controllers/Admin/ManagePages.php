@@ -12,16 +12,16 @@ class ManagePages extends Controller
 {
     public function index() {
         $pages = PageMeta::paginate(10);
-        return view('admin.manage_pages.manage_pages', ['data' => $pages]);
+        return view('admin.manage_pages.index', ['data' => $pages]);
     }
 
     public function index_single($id) {
         $page = PageMeta::where('id', $id)->first();
-        return view('admin.manage_pages.manage_pages_single', ['data' => $page]);
+        return view('admin.manage_pages.create', ['data' => $page]);
     }
 
     public function index_single_create() {
-        return view('admin.manage_pages.manage_pages_single');
+        return view('admin.manage_pages.create');
     }
 
     public function store(Request $request) {
@@ -32,9 +32,9 @@ class ManagePages extends Controller
             'page_meta_description' => 'nullable|string',
             'page_url' => 'required|string',
             'page_name' => 'required|string',
-            'banner_title' => 'required|string',
-            'banner_text' => 'required|string',
-            'banner_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:5048',
+            'banner_title' => 'nullable|string',
+            'banner_text' => 'nullable|string',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:5048',
         ]);
 
         $data = $request->all();
@@ -79,7 +79,16 @@ class ManagePages extends Controller
         
     }
 
-    public function destroy() {
-        
+    public function destroy($id) {
+        $pageMeta = PageMeta::findOrFail($id);
+
+        if ($pageMeta->banner_image) {
+            Storage::disk('public')->delete($pageMeta->banner_image);
+        }
+
+        $pageMeta->delete();
+
+        return redirect()->route('admin_manage_pages')->with('success', 'Page deleted successfully.');
     }
+
 }

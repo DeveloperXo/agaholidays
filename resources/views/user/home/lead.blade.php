@@ -35,11 +35,20 @@
                     </p>
 
                     <div class="search-bar-container mt-4">
-                        <div class="col col-md-5 col-12">
-                            <div class="search-bar">
-                                <input type="text" class="form-control search-input" placeholder="Search your destination" />
-                                <button class="btn btn-primary" type="submit">Search</button>
-                            </div>
+                        <div class="col col-md-5 col-12 search-col">
+                            <form action="{{ route('user_filter_packages') }}">
+                                <div class="search-bar">
+                                    <input type="text" class="form-control search-input" name="country" id="leadSearchInput" placeholder="Search your destination" readonly/>
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </div>
+                                <div class="suggestions">
+                                    <ul class="suggestions-ul">
+                                        @isset($countries) @foreach($countries as $d)
+                                            <li class="option-child" data-value="{{ $d->country_name }}"><i class="bi bi-geo-alt"></i> {{ $d->country_name }}</li>
+                                        @endforeach @endisset
+                                    </ul>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

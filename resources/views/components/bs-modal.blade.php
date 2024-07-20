@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">
                 <p class="mb-2 text-p">
-                    {{ $modal_body }}
+                    {!! $modal_body !!}
                 </p>
                 {{ $slot }}
             </div>

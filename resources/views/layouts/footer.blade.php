@@ -7,9 +7,9 @@
                 <ul class="footer-nav mt-2">
                 </ul>
                 <p class="footer-about-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Odio accusantium, modi quo totam ab atque sapiente natus ea 
-                    tempora voluptatum.
+                    AGA Holidays, based in Delhi, India, offers comprehensive travel services including 
+                    domestic and international tour packages, hotel bookings, flight tickets, tourist 
+                    visas, and cruise packages...
                 </p>
                 <ul class="footer-nav mt-2">
                     <li><a href="{{ route('user_about') }}">Read more...</a></i></li>
@@ -21,9 +21,9 @@
                 <div class="footer-nav-container">
                     <h5 class="nav-title">About</h5>
                     <p class="footer-about-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Odio accusantium, modi quo totam ab atque sapiente natus ea 
-                        tempora voluptatum.
+                        AGA Holidays, based in Delhi, India, offers comprehensive travel services including 
+                        domestic and international tour packages, hotel bookings, flight tickets, tourist 
+                        visas, and cruise packages...
                     </p>
                     <ul class="footer-nav mt-2">
                         <li><a href="{{ route('user_about') }}">Read more...</a></i></li>
@@ -34,9 +34,9 @@
                 <div class="footer-nav-container">
                     <h5 class="nav-title">Support</h5>
                     <ul class="footer-nav mt-2">
-                        <li><a href="#">Customer Support</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
                         <li><a href="{{ route('user_contact') }}">Contact Us</a></li>
+                        <li><a href="{{ route('user_privacy_policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ route('user_terms') }}">Terms & Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,8 +45,8 @@
                     <h5 class="nav-title">Explore</h5>
                     <ul class="footer-nav mt-2">
                         <li><a href="{{ route('user_packages') }}">Packages</a></li>
+                        <li><a href="{{ route('user_destinations') }}">Destinations</a></li>
                         <li><a href="{{ route('user_blogs') }}">Blogs</a></li>
-                        <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
             </div>
@@ -55,9 +55,9 @@
                     <h5 class="nav-title">Contact</h5>
                     <ul class="footer-nav mt-2">
                         <li><a>Reach Us at:</a></li>
-                        <li><a>455 West Orchard Street Kings Mountain, NC 280867</a></li>
-                        <li><a href="tel:+91 8767656545"><i class="bi bi-telephone"></i> +91 8767656545</a></li>
-                        <li><a href="mailto:support@agaholidays.com"><i class="bi bi-envelope"></i> support@agaholidays.com</a></li>
+                        <li><a>Office No. C-5, 3rd Floor, B-156, New Ashok Nagar, New Delhi, Delhi 110096</a></li>
+                        <li><a href="tel:+91 8800690188"><i class="bi bi-telephone"></i> +91 8800690188/89</a></li>
+                        <li><a href="mailto:info@agaholidays.com"><i class="bi bi-envelope"></i> info@agaholidays.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,14 +74,14 @@
                     </ul>
                 </div>
 
-                <div class="col-12  col-md-6">
+                {{--<div class="col-12  col-md-6">
                     <ul class="footer-payments-nav nav mt-2">
                         <li><img src="{{ asset('assets/img/visa.png') }}" alt="VISA" /></li>
                         <li><img src="{{ asset('assets/img/mastercard.png') }}" alt="MasterCard" /></li>
                         <li><img src="{{ asset('assets/img/paypal.png') }}" alt="Paypal" /></li>
                         <li><img src="{{ asset('assets/img/rupay.png') }}" alt="Rupay" /></li>
                     </ul>
-                </div>
+                </div>--}}
             </div>
         </div>
 

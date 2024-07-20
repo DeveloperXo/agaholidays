@@ -10,21 +10,18 @@
         <meta content="" name="keywords">
 
         <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <link href="" rel="icon">
+        <link href="" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.gstatic.com" rel="preconnect">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
             
         <!-- Vendor CSS Files -->
-        <link href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+        <!-- <link href="{{ asset('assets/admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet"> -->
         <link href="{{ asset('assets/admin/vendor/quill/quill.snow.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
         
         <!-- CSS -->
@@ -32,6 +29,10 @@
         
         <!-- Template Main CSS File -->
         <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
+
+        <!-- Jquery -->
+        <script src="{{ asset('assets/admin/vendor/jquery/jquery-3.7.1.min.js') }}"></script>
+        
 
         <!-- =======================================================
         * Template Name: NiceAdmin
@@ -101,91 +102,11 @@
             <nav class="header-nav ms-auto">
                 <ul class="d-flex align-items-center">
 
-                    <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link nav-icon search-bar-toggle " href="#">
-                        <i class="bi bi-search"></i>
-                    </a>
-                    </li><!-- End Search Icon-->
-
-                    <li class="nav-item dropdown">
-
-                        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-bell"></i>
-                            <span class="badge bg-primary badge-number">4</span>
-                        </a><!-- End Notification Icon -->
-
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                            <li class="dropdown-header">
-                                You have 4 new notifications
-                                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            <li class="notification-item">
-                                <i class="bi bi-info-circle text-primary"></i>
-                                <div>
-                                    <h4>Dicta reprehenderit</h4>
-                                    <p>Quae dolorem earum veritatis oditseno</p>
-                                    <p>4 hrs. ago</p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li class="dropdown-footer">
-                                <a href="#">Show all notifications</a>
-                            </li>
-
-                        </ul><!-- End Notification Dropdown Items -->
-
-                    </li><!-- End Notification Nav -->
-
-                    <li class="nav-item dropdown">
-
-                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-chat-left-text"></i>
-                        <span class="badge bg-success badge-number">3</span>
-                    </a><!-- End Messages Icon -->
-
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-                        <li class="dropdown-header">
-                            You have 3 new messages
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                                <div>
-                                <h4>Maria Hudson</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>4 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="dropdown-footer">
-                            <a href="#">Show all messages</a>
-                        </li>
-
-                    </ul><!-- End Messages Dropdown Items -->
-
-                    </li><!-- End Messages Nav -->
-
                     <li class="nav-item dropdown pe-3">
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ auth()->user()->name }}</span>
-                    </a><!-- End Profile Iamge Icon -->
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                            <span class="dropdown-toggle ps-2">{{ auth()->user()->name }}</span>
+                        </a><!-- End Profile Iamge Icon -->
 
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                             <li class="dropdown-header">
@@ -197,7 +118,7 @@
                             </li>
 
                             <li>
-                                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.edit') }}"> {{-- No! No special profile for admins! --}}
                                     <i class="bi bi-person"></i>
                                     <span>My Profile</span>
                                 </a>
@@ -236,17 +157,45 @@
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#page-settings-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-gear"></i><span>Pages</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link {{ request()->route()->getName() === 'admin_users.view_all' ? '' : 'collapsed' }}" data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="page-settings-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="users-nav" class="nav-content collapse {{ request()->route()->getName() === 'admin_users.view_all' ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('admin_manage_pages') }}">
-                            <i class="bi bi-circle"></i><span>Manage Pages</span>
+                        <a class="{{ request()->route()->getName() === 'admin_users.view_all' ? 'active' : '' }}" href="{{ route('admin_users.view_all') }}">
+                            <i class="bi bi-circle"></i><span>All Users</span>
                         </a>
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#package-query-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-envelope-open-heart"></i><span>Package Queries</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="package-query-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_package_queries.view_all') }}">
+                            <i class="bi bi-circle"></i><span>All Queries</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#contact-query-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-envelope-at"></i><span>Contact Queries</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="contact-query-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_contact_queries.view_all') }}">
+                            <i class="bi bi-circle"></i><span>All Queries</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <hr>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#blogs-nav" data-bs-toggle="collapse" href="#">
@@ -268,7 +217,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#destinations-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-file-earmark-richtext"></i><span>Destinations</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-signpost-split"></i><span>Destinations</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="destinations-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -279,6 +228,129 @@
                     <li>
                         <a href="{{ route('admin_destinations.view_create') }}">
                             <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#packages-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-image-alt"></i><span>Packages</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="packages-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_packages.view_all') }}">
+                            <i class="bi bi-circle"></i><span>Manage Packages</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_packages.view_create') }}">
+                            <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#categories-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-list-ul"></i><span>Categories</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="categories-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_categories.view_all') }}">
+                            <i class="bi bi-circle"></i><span>Manage Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_categories.view_create') }}">
+                            <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <hr>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#cities-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-geo-alt"></i><span>Cities</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="cities-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_cities.view_all') }}">
+                            <i class="bi bi-circle"></i><span>Manage Cities</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_cities.view_create') }}">
+                            <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#countries-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-globe-americas"></i><span>Countries</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="countries-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_countries.view_all') }}">
+                            <i class="bi bi-circle"></i><span>Manage Countries</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_countries.view_create') }}">
+                            <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#destination-places-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-geo"></i><span>Destination Places</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="destination-places-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_destination_places.view_all') }}">
+                            <i class="bi bi-circle"></i><span>Manage Destination Places</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_destination_places.view_create') }}">
+                            <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#departure-places-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-clipboard-data"></i><span>Departure Cities</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="departure-places-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_departure_cities.view_all') }}">
+                            <i class="bi bi-circle"></i><span>Manage Departure Cities</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_departure_cities.view_create') }}">
+                            <i class="bi bi-circle"></i><span>Add New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#page-settings-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-gear"></i><span>Pages</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="page-settings-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin_manage_pages') }}">
+                            <i class="bi bi-circle"></i><span>Manage Pages</span>
                         </a>
                     </li>
                 </ul>
@@ -324,8 +396,7 @@
 
         <!-- Template Main JS File -->
         <script src="{{ asset('assets/admin/js/main.js') }}"></script>
-
-        @vite(['resources/js/app.js'])
+        @vite(['resources/js/app.js', 'resources/js/admin.js'])
 
     </body>
 </html>

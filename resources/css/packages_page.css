@@ -131,7 +131,13 @@
 
 .packages-list .card .img-wrap {
     width: 100%;
-    height: 100%;
+    height: 230px;
+}
+
+@media (max-width: 576px) {
+    .packages-list .card .img-wrap {
+        height: 250px;
+    }
 }
 
 .packages-list .card .img-col .img-overlay {
@@ -206,10 +212,13 @@
 }
 
 .packages-list .card .card-body .breadcrumb {
-    border: 1px solid #dd460098;
-    display: inline;
+    border: 2px solid #dd460098;
+    color: var(--font-color-theme);
+    font-family: var(--font-family-five);
+    display: inline-block;
     padding: 3px 10px;
     border-radius: 3px;
+    margin: 0 1px;
 }
 
 .packages-list .card .card-body-last {
@@ -224,6 +233,19 @@
 
 .packages-list .pricing .actual-price {
     text-decoration: line-through;
+    color: #303030a9;
+}
+
+.packages-list .pricing .discount-price {
+    font-size: 22px;
+    color: var(--font-color-dark);
+}
+
+.packages-list .pricing .text-small {
+    font-size: 13px;
+    font-family: var(--font-family-five);
+    color: var(--font-color-dark);
+    font-weight: 500;
 }
 
 .packages-list .explore-btn a {
@@ -231,7 +253,7 @@
     text-decoration: none;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .packages-list .card .card-body-last {
         flex-direction: row;
         padding-top: 0;

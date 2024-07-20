@@ -1247,3 +1247,46 @@ ul.pagination {
   z-index: 999;
   min-width: 50%;
 }
+
+/* Quill */
+
+.ql-editor :where(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+  margin-bottom: 10px !important;
+}
+
+.ql-editor :where(p, li, a) {
+  font-size: 16px;
+}
+
+/* Tags editor - /blogs */
+
+.tag {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 0.5em;
+  margin: 0.2em;
+  border-radius: 0.2em;
+}
+
+.tag .remove-tag {
+  margin-left: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tag-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.5em;
+}
+
+.tag-input-container input {
+  border: none;
+  flex: 1;
+  min-width: 100px;
+  outline: none;
+  background: none;
+}

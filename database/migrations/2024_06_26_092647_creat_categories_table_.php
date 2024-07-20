@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('page_meta_id'); // remove it
             $table->string('status')->default('draft');
             $table->string('category_name');
             $table->text('intro_text');

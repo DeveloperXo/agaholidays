@@ -5,16 +5,22 @@
     @include('user.home.lead')
 
     <!-- Packages -->
-    @include('user.home.packages')
+    @isset($packages)
+        @include('user.home.packages')
+    @endisset
 
     <!-- Destinations -->
-    @include('user.home.destinations')
+    @isset($destinations)
+        @include('user.home.destinations')
+    @endisset
 
     <!-- Features -->
     @include('user.home.features')
 
     <!-- Blogs -->
-    @include('user.home.blogs')
+    @isset($blogs)
+        @include('user.home.blogs')
+    @endisset
 
     <!-- Newsletter --> 
     @include('components.newsletter')

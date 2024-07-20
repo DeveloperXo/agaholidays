@@ -68,10 +68,10 @@
 }
 
 .footer .sub-footer span{
-    font-size: 16px;
+    font-size: 15px;
     color: #7e9abd;
     font-family: var(--font-family-four);
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 500;
 }
 

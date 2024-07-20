@@ -43,14 +43,15 @@
     color: var(--font-color-dark);
     font-family: var(--font-family-five);
     font-size: 17px;
-    margin: 0;
+    margin-bottom: 3px;
 }
 
 .contact-body .contact-card-details .contact-info .text {
-    font-family: var(--font-family-four);
-    font-size: 15px;
+    font-family: var(--font-family-five);
     color: #4e4e4e;
     margin: 0;
+    line-height: 1.3;
+    font-size: 14px;
 }
 
 .contact-body .contact-card-details .contact-info .text a {

@@ -6,6 +6,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/about_page.css',
+                'resources/js/admin.js',
                 'resources/sass/app.scss',
                 'resources/css/app.css',
                 'resources/js/app.js',
@@ -21,6 +22,7 @@ export default defineConfig({
                 'resources/css/navigation.css',
                 'resources/css/package_single.css',
                 'resources/css/packages_page.css',
+                'resources/js/user.js'
             ],
             refresh: true,
         }),

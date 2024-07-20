@@ -17,7 +17,6 @@ class PackageFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'page_meta_id' => 2,
             'package_name' => $this->faker->sentence,
             'package_location' => 'Sabah, Malaysia',
             'actual_price' => $this->faker->numberBetween(60000, 90000),

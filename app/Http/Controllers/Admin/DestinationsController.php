@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Destination;
 
@@ -11,12 +12,11 @@ class DestinationsController extends Controller
 {
     public function index_all () {
         $destinations = Destination::paginate(10);
-        // dd($destinations);
-        return view('admin.destinations.destinations', ['data' => $destinations]);
+        return view('admin.destinations.index', ['data' => $destinations]);
     }
 
     public function index_create () {
-        return view('admin.destinations.destinations_create');
+        return view('admin.destinations.create');
     }
 
     public function store (Request $request) {
@@ -42,7 +42,7 @@ class DestinationsController extends Controller
 
     public function index_update ($id) {
         $data = Destination::where('id', $id)->first();
-        return view('admin.destinations.destinations_create', ['data' => $data]);
+        return view('admin.destinations.create', ['data' => $data]);
     }
 
     public function update(Request $request, $id) {
@@ -85,15 +85,18 @@ class DestinationsController extends Controller
         return redirect()->back()->with('success', 'Status updated successfully!');
     }
 
-    public function destroy(Request $request, $id) {
-        $destination = Destination::find($id);
+    public function destroy($id)
+    {
+        $destination = Destination::findOrFail($id);
 
-        if (!$destination) {
-            return redirect()->route('admin_destinations.view_all')->with('error', 'Destination not found.');
-        }
+        $images = json_decode($destination->images, true);
 
-        if ($destination->featured_image && Storage::exists('public/' . $destination->featured_image)) {
-            Storage::delete('public/' . $destination->featured_image);
+        if ($images) {
+            foreach ($images as $image) {
+                if (isset($image['url'])) {
+                    Storage::disk('public')->delete($image['url']);
+                }
+            }
         }
 
         $destination->delete();

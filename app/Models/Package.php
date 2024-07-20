@@ -5,17 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Category;
+
 class Package extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'page_meta_id',
         'status',
         'package_name',
-        'package_location',
-        'actual_price',
-        'payable_price',
+        'city',
+        'country',
+        'starting_price',
+        'category_id',
+        'duration',
         'tags',
         'infos',
         'images',
@@ -37,7 +40,7 @@ class Package extends Model
         'tour_plan' => 'array',
     ];
 
-    public function page_meta() {
-        return $this->belongsTo(PageMeta::class);
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }

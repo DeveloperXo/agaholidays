@@ -14,12 +14,12 @@ class BlogsController extends Controller
 {
     public function index_all () {
         $blogs = Blog::paginate(10);
-        return view('admin.blogs.blogs', ['data' => $blogs]);
+        return view('admin.blogs.index', ['data' => $blogs]);
     }
 
     public function index_create () {
-        $categories = Category::where('status', 'published')->get();
-        return view('admin.blogs.blogs_create', ['categories' => $categories]);
+        $categories = Category::where('status', 'published')->where('category_type', 'blogs')->get();
+        return view('admin.blogs.create', ['categories' => $categories]);
     }
 
     public function store (Request $request) {
@@ -30,7 +30,7 @@ class BlogsController extends Controller
             'blog_content' => 'required|string',
             'category_id' => 'required|integer|exists:categories,id', // belongs to categories table
             'featured_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:5048',
-            'tags' => 'required|string',
+            'tags' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
         ]);
@@ -51,7 +51,7 @@ class BlogsController extends Controller
     public function index_update ($id) {
         $data = Blog::where('id', $id)->first();
         $categories = Category::where('status', 'published')->get();
-        return view('admin.blogs.blogs_create', ['data' => $data, 'categories' => $categories]);
+        return view('admin.blogs.create', ['data' => $data, 'categories' => $categories]);
     }
 
     public function update(Request $request, $id) {

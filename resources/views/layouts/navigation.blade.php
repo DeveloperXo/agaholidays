@@ -36,7 +36,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
-                                <!-- <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dahsboard</a></li> -->
+                                {{--<li><a class="dropdown-item" href="{{ route('dashboard') }}">Dahsboard</a></li>--}}
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="post">
